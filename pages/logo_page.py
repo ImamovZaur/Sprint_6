@@ -20,12 +20,12 @@ class LogoPage:
         driver.find_element(*LogoLocator.YANDEX_LOGO).click()
 
     @allure.step("Переключение вкладки")
-    def switching_to_the_tab(self, browser):
-        browser.switch_to.window(browser.window_handles[1])
+    def switching_to_the_tab(self, driver):
+        driver.switch_to.window(driver.window_handles[1])
 
     @allure.step("Ожидание загрузки страницы")
-    def wait_for_page_load(self, browser):
-        WebDriverWait(browser, 10).until(eс.url_to_be(Urls.DZEN_PAGE))
+    def wait_for_page_load(self, driver):
+        WebDriverWait(driver, 10).until(eс.url_to_be(Urls.DZEN_PAGE))
 
     @allure.step('Проверка URL Дзена')
     def check_dzen_url(self, driver):
